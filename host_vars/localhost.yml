@@ -1,0 +1,17 @@
+pptp_use_radius: false
+pptp_users:
+  - username: "molon"
+    password: "123456"
+pptp_dns_servers:
+  - 8.8.4.4
+  - 8.8.8.8
+
+
+shadowsocks_servers:
+
+  multiport:
+    port_password:
+      38838: "123456"
+      38839: "123456"
+      38840: "123456"
+    enable_udp: true
