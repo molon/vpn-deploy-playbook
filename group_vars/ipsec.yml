@@ -1,0 +1,33 @@
+---
+ipsec_enable_l2tp: false
+ipsec_enable_ikev1: true
+ipsec_enable_ikev2: false
+
+# the generated server cert should also be imported to osx
+
+ipsec_domain: "{{ inventory_hostname }}"
+ipsec_bind_ip:  "{{ ansible_default_ipv4.address }}"
+ipsec_subnet: 10.7.0.0/24
+
+ipsec_use_radius: false
+ipsec_radius_servers:
+  - host: 127.0.0.1
+    secret: some-radius-secret
+
+ipsec_dns_servers:
+   - 8.8.8.8
+   - 8.8.4.4
+
+ipsec_psk: "molon_psk"
+ikev1_users:
+  - username: "molon"
+    password: "123456"
+  - username: "molon2"
+    password: "123456"
+
+ikev2_users: []
+#ikev_users:
+#  - username: "user1"
+#    password: "pass1"
+#  - username: "user2"
+#    password: "passw"
